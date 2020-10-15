@@ -5,10 +5,10 @@ This program provides a collections of basic operations on a binary tree such as
 Find the height of the tree:
 Method that is available to user:
 ```java
-//Initializes the tree with a root
-    public BinaryTree(int rootItem) {
-        /* DO NOT EDIT THIS METHOD */
-        root = new TreeNode(rootItem, null, null);
+//Returns the height of the tree
+    public int height(){
+        // Use a helper method to find the height
+        return heightSubtree(root);
     }
 ```
 Helper Method:
