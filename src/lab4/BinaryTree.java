@@ -51,13 +51,13 @@ public class BinaryTree {
         if (root == null) root = temp;
 
         // In case, there is any element on the left branch
-        if (root.getLeft() != null) {
+        else if (root.getLeft() != null) {
             System.out.println("Left branch is already occupied!");
             return;
         }
-
+        else
         //  Add the node as the left child
-        root.setLeft(temp);
+            root.setLeft(temp);
     }
 
     //Attaches an item to the right branch
@@ -70,13 +70,13 @@ public class BinaryTree {
 
 
         // In case, there is already an element on the right branch
-        if (root.getRight() != null) {
+        else if (root.getRight() != null) {
             System.out.println("Right branch is already occupied!");
             return;
         }
-
-        // Add the new node as the right child 
-        root.setRight(temp);
+        else
+            // Add the new node as the right child 
+            root.setRight(temp);
     }
 
     //Attaches a sub-tree to the left branch
@@ -86,13 +86,14 @@ public class BinaryTree {
         if (root == null) root  = leftTree.root;
 
         // Check if the left branch is already occupied
-        if (root.getLeft() != null) {
+        else if (root.getLeft() != null) {
             System.out.println("Left branch already occupied!");
             return;
         }
 
-        // Add the new subtree as the left subtree of the root
-        root.setLeft(leftTree.root);
+        else
+            // Add the new subtree as the left subtree of the root
+            root.setLeft(leftTree.root);
     }
 
     //Attaches a sub-tree to the right branch
@@ -102,13 +103,13 @@ public class BinaryTree {
         if (root == null) root = rightTree.root;
 
         // In case the right branch has a subtree
-        if (root.getRight() != null) {
+        else if (root.getRight() != null) {
             System.out.println("Left branch is already occupied!");
             return;
         }
-
-        // Add the new subtree as th right subtree of the root
-        root.setRight(rightTree.root);
+        else
+            // Add the new subtree as th right subtree of the root
+            root.setRight(rightTree.root);
     }
 
     //Returns the number of nodes in the tree.
@@ -117,7 +118,7 @@ public class BinaryTree {
         return sizeRecursive(root);
     }
 
-    //Recursive method to calculate the number of nodes.
+    //Recursive method to calculate the number of nodes.0
     public int sizeRecursive(TreeNode node) {
         
         // Intialize size to be 0
@@ -138,7 +139,7 @@ public class BinaryTree {
 
         return size; 
         /* Another way
-        if (node == null) return 0;
+        if (node == null) return 0; // If node is null
         if (node.getLeft() != null && node.getRight() != null)
             return 1 + sizeRecursive(node.getLeft()) + sizeRecursive(node.getRight());
         if (node.getLeft() != null)
@@ -147,6 +148,11 @@ public class BinaryTree {
             return 1 + sizeRecursive(node.getRight());
         else return 1;
         */
+
+        /*One more way: Less line of code
+            if (node == null) return 0;
+            return 1 + sizeRecursive(node.getLeft()) + sizeRecursive(node.getRight());
+         */
     }
 
     //Returns the height of the tree

@@ -1,7 +1,6 @@
 package lab4;
 public class TreeNode {
 
-    
     private int item;
     private TreeNode leftChild;
     private TreeNode rightChild;
